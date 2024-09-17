@@ -1,0 +1,693 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto Serif', sans-serif;
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+h1, h2 {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 600;
+}
+
+h3 {
+  font-weight: 300;
+}
+
+/*other animations*/
+
+.moving-bar {
+    font-weight: bold;
+    margin-left: 10px;
+    position: relative;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 500;
+    font-family: 'Battlesbridge';
+    font-stretch: narrower;
+    color: #ffffff;
+    padding: 0.5rem 0;
+    margin-top: 20px;
+}
+
+.moving-bar::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    background-color: #1abc9c;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-in-out;
+}
+
+.moving-bar:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/*Navbar*/
+
+
+.navbar {
+  width: 100%;
+  padding: 1rem 3rem;
+  background: rgb(0,0,0);
+  /*background: linear-gradient(90deg, rgba(0,0,0,0.7317051820728291) 0%, rgba(0,0,0,0.7401085434173669) 100%);*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  transition: top 0.3s ease, background 0.3s ease;
+}
+
+.navbar.hidden {
+  top: -100px;
+}
+
+.logo {
+  font-size: 1.8rem;
+  color: #1abc9c;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #1abc9c;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 21px;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: black;
+}
+
+.svg-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.circle {
+  fill: none;
+  stroke: #1abc9c;
+  stroke-width: 5;
+  stroke-dasharray: 1256;
+  stroke-dashoffset: 1256;
+  animation: dash 5s infinite linear;
+}
+
+@keyframes dash {
+  to {
+      stroke-dashoffset: 0;
+  }
+}
+
+.content {
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+}
+
+.content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.content p {
+  font-size: 1.2rem;
+}
+
+/*Director*/
+
+/* General styles for the .message section */
+.message {
+  background-color: #000;
+  color: #fff;
+  padding: 80px;
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+/* Container for content and image */
+.message-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Style for the image */
+.message-image {
+  max-width: 30%;
+  height: auto;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+/* Style for the text container */
+.message-text {
+  flex: 1;
+  min-width: 60%;
+}
+
+/* Style for the paragraph */
+.message-text p {
+  color: #f9f9f9;
+  position: relative;
+  padding: 40px 60px;
+  margin: 0 0 20px 0;
+}
+
+/* Apostrophe styles */
+.apostrophe {
+  font-size: 6rem;
+  color: #00bcd4;
+  position: absolute;
+  line-height: 1;
+}
+
+.left-apostrophe {
+  top: 0;
+  left: 0;
+}
+
+.right-apostrophe {
+  bottom: 0;
+  right: 20px;
+}
+
+/* Style for the footer (a tags) */
+.message-footer {
+  text-align: left;
+  padding-left: 60px;
+}
+
+.message-footer a {
+  color: #f9f9f9;
+  text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .message {
+    padding: 40px 20px;
+  }
+
+  .message-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .message-image {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .message-text p {
+    padding: 30px 40px;
+  }
+
+  .apostrophe {
+    font-size: 4rem;
+  }
+
+  .right-apostrophe {
+    right: 10px;
+  }
+
+  .message-footer {
+    padding-left: 40px;
+  }
+}
+
+
+/* Section Styling */
+section {
+  padding: 5rem 3rem;
+  text-align: center;
+  background-color: black;
+}
+
+section h2 {
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #1abc9c;
+}
+
+.message, .teachers, .events, .gallery {
+  background-color: #000;
+  color: #024832;
+}
+
+/* Teachers Section */
+.teachers {
+  padding: 2rem;
+  background-color: #000;
+}
+.teacher-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.teacher-card {
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+  margin: 1rem;
+}
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+.teacher-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-front {background: rgb(0,252,228);
+  background: linear-gradient(90deg, rgba(0,252,228,1) 0%, rgba(7,236,172,0.5020133053221288) 100%);
+}
+.card-back {
+  background-color: #4a4a4a;
+  color: white;
+  transform: rotateY(180deg);
+  padding: 1rem;
+}
+.teacher-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+h3, h4 {
+  margin: 0.5rem 0;
+}
+
+/* Events Section */
+.events {
+  padding: 2rem;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.event-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.event-card {
+  width: 300px;
+  height: 400px;
+  margin: 1rem;
+  perspective: 1500px;
+  position: relative;
+}
+.card-cover, .card-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.8s ease;
+}
+.card-cover {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+.card-content {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+}
+.event-card:hover .card-cover {
+  transform: rotateY(-90deg);
+  transform-origin: left;
+}
+.event-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.event-title {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+.event-date {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 1rem;
+}
+.event-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #444;
+}
+/*TimeLine*/
+.events2-section {
+  padding: 100px 20px;
+  background-color: #f5f5f5;
+  position: relative;
+  scrollbar-width: none;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 50px;
+}
+
+.timeline-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: hidden; /* Prevent vertical scrolling */
+  white-space: nowrap;
+  padding: 0 20px;
+  scroll-behavior: smooth; /* Smooth horizontal scroll */
+  display: flex;
+  align-items: center; /* Center content vertically */
+  scrollbar-width: none;
+}
+
+.timeline {
+  display: flex; /* Horizontal arrangement of events */
+  position: relative;
+  height: 200px; /* Adjust height to accommodate up and down event cards */
+  align-items: center;
+  width: max-content; /* Prevent infinite width */
+}
+
+.event2 {
+  position: relative;
+  min-width: 200px;
+  background-color: #333;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  padding: 15px;
+  margin: 0 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+}
+
+/* Alternating Cards */
+.event2.up {
+  align-self: flex-start; /* Place above the line */
+  transform: translateY(-20px);
+}
+
+.event2.down {
+  align-self: flex-end; /* Place below the line */
+  transform: translateY(20px);
+}
+
+.event2 .branch {
+  width: 3px;
+  height: 50px;
+  background-color: #333;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.event2.up .branch {
+  top: 100%; /* Branch comes from the bottom of the card when up */
+}
+
+.event2.down .branch {
+  bottom: 100%; /* Branch comes from the top of the card when down */
+}
+
+/* Timeline line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%; /* Extend line across entire timeline */
+  height: 3px;
+  background-color: #333;
+  transform: translateY(-50%);
+}
+
+.final-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #0ee9c8;
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Smooth horizontal scroll */
+.timeline-container {
+  scroll-behavior: smooth;
+}
+
+/* Media Query for Mobile View */
+@media screen and (max-width: 768px) {
+  .timeline-container {
+      overflow-x: visible; /* Disable horizontal scrolling on mobile */
+      white-space: normal; /* Allow the content to wrap */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-height: 200px;
+  }
+
+  .timeline {
+      width: 2px;
+      height: auto;
+      background-color: #000;
+      top:0;
+      position: relative;
+      margin: 20px 0;
+  }
+
+  .timeline-card {
+      width: 90%; /* Make cards take up most of the screen width */
+      max-width: 300px; /* Limit max width */
+      margin: 20px 0; /* Add margin between cards */
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      background-color: #f4f4f4;
+  }
+
+  /* Adjust the connector lines for mobile view */
+  .branch{
+    display: none;
+  }
+  .branch-line {
+      width: 2px;
+      height: 50px;
+      background-color: #000;
+      margin: 0 auto;
+  }
+
+  .final-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: teal;
+      margin: 0 auto;
+  }
+
+  /* Align cards and timeline properly */
+  .timeline-card.left,
+  .timeline-card.right {
+      left: 50%;
+      transform: translateX(-50%);
+  }
+  
+  .event2 {
+    min-width: 150px;
+    font-size: 14px;
+    height: 120px;
+  }
+
+  .event2-content h3 {
+      font-size: 16px;
+  }
+
+  .event2-content p {
+      font-size: 12px;
+  }
+}
+
+
+/* Gallery Section */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  max-height: 300px;
+  border-radius: 10px;
+}
+
+/* Footer */
+.footer {
+  padding: 2rem;
+  background-color: #1abc9c;
+  text-align: center;
+  font-size: 1rem;
+  color: #000;
+}
+
+.footer p {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+  background: rgb(6, 233, 199);
+  }
+  .content h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(6, 233, 199);
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    left: 50%;
+    font-size: larger;
+    font-stretch: expanded;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  .dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #444;
+    color: #1abc9c;
+  }
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      background-color: rgb(6, 233, 199);
+      position: absolute;
+      top: 50px;
+      right: 0;
+      margin-top:10px;
+      width: 100vw;
+      font-family: 'Times New Roman', Times, serif;
+      text-align: center;
+      a{
+        margin-right:10px;
+      }
+  }
+  .nav-links.active {
+      display: flex;
+  }
+
+  .burger {
+      display: flex;
+  }
+
+  .teacher-list {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+

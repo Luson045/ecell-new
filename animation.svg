@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Black background -->
+  <rect width="100%" height="100%" fill="black" />
+  
+  <!-- Grid lines -->
+  <g stroke="#1a1a1a" stroke-width="1">
+    <line x1="0" y1="0" x2="800" y2="0" />
+    <line x1="0" y1="100" x2="800" y2="100" />
+    <line x1="0" y1="200" x2="800" y2="200" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="0" y1="400" x2="800" y2="400" />
+    
+    <line x1="0" y1="0" x2="0" y2="400" />
+    <line x1="200" y1="0" x2="200" y2="400" />
+    <line x1="400" y1="0" x2="400" y2="400" />
+    <line x1="600" y1="0" x2="600" y2="400" />
+    <line x1="800" y1="0" x2="800" y2="400" />
+  </g>
+  
+  <!-- Animated stock lines -->
+  <g stroke="#00FFFF" stroke-width="2" fill="none">
+    <!-- Line 1 -->
+    <path>
+      <animate 
+        attributeName="d" 
+        dur="30s"
+        repeatCount="indefinite"
+        values="
+          M0,200 Q200,100 400,300 T800,150;
+          M0,250 Q200,50 400,350 T800,200;
+          M0,150 Q200,250 400,100 T800,300;
+          M0,200 Q200,100 400,300 T800,150"
+      />
+    </path>
+    
+    <!-- Line 2 -->
+    <path>
+      <animate 
+        attributeName="d" 
+        dur="40s"
+        repeatCount="indefinite"
+        values="
+          M0,300 Q200,200 400,350 T800,250;
+          M0,200 Q200,350 400,150 T800,300;
+          M0,350 Q200,100 400,300 T800,200;
+          M0,300 Q200,200 400,350 T800,250"
+      />
+    </path>
+    
+    <!-- Line 3 -->
+    <path>
+      <animate 
+        attributeName="d" 
+        dur="35s"
+        repeatCount="indefinite"
+        values="
+          M0,100 Q200,300 400,200 T800,350;
+          M0,150 Q200,250 400,100 T800,300;
+          M0,300 Q200,150 400,250 T800,100;
+          M0,100 Q200,300 400,200 T800,350"
+      />
+    </path>
+    
+    <!-- Line 4 (New) -->
+    <path>
+      <animate 
+        attributeName="d" 
+        dur="45s"
+        repeatCount="indefinite"
+        values="
+          M0,50 Q200,250 400,150 T800,300;
+          M0,250 Q200,100 400,300 T800,150;
+          M0,150 Q200,350 400,50 T800,250;
+          M0,50 Q200,250 400,150 T800,300"
+      />
+    </path>
+    
+    <!-- Line 5 (New) -->
+    <path>
+      <animate 
+        attributeName="d" 
+        dur="38s"
+        repeatCount="indefinite"
+        values="
+          M0,350 Q200,150 400,250 T800,50;
+          M0,250 Q200,300 400,100 T800,350;
+          M0,100 Q200,200 400,350 T800,150;
+          M0,350 Q200,150 400,250 T800,50"
+      />
+    </path>
+    
+    <!-- Line 6 (New) -->
+    <path>
+      <animate 
+        attributeName="d" 
+        dur="42s"
+        repeatCount="indefinite"
+        values="
+          M0,200 Q200,50 400,300 T800,200;
+          M0,100 Q200,350 400,150 T800,300;
+          M0,300 Q200,200 400,50 T800,250;
+          M0,200 Q200,50 400,300 T800,200"
+      />
+    </path>
+  </g>
+</svg>
