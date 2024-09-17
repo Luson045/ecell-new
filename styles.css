@@ -457,7 +457,8 @@ h2 {
   height: 100%;
   backface-visibility: hidden;
   border-radius: 10px;
-  overflow: hidden;
+  overflow: scroll;
+  scrollbar-width: none;
   transition: all 0.8s ease;
 }
 .card-cover {
