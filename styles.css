@@ -13,8 +13,9 @@ body {
 }
 
 h1, h2 {
-  font-family: 'Montserrat Alternates', sans-serif;
-  font-weight: 600;
+  font-family: 'Roboto Serif', sans-serif;
+  font-weight: 700;
+  color: white;
 }
 
 h3 {
@@ -162,6 +163,59 @@ h3 {
 
 .content p {
   font-size: 1.2rem;
+}
+
+/* Word Carousel Styles */
+.word-carousel {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  position: relative;
+  height: 30px; /* Adjust height based on font size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-word {
+  position: absolute;
+  opacity: 0;
+  animation: flip 9s infinite;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Control the order of animation */
+.flip-word:nth-child(1) {
+  animation-delay: 0s;
+}
+.flip-word:nth-child(2) {
+  animation-delay: 3s;
+}
+.flip-word:nth-child(3) {
+  animation-delay: 6s;
+}
+
+@keyframes flip {
+  0% {
+      opacity: 0;
+      transform: translateY(100%);
+  }
+  10% {
+      opacity: 1;
+      transform: translateY(0%);
+  }
+  30% {
+      opacity: 1;
+      transform: translateY(0%);
+  }
+  40% {
+      opacity: 0;
+      transform: translateY(-100%);
+  }
+  100% {
+      opacity: 0;
+      transform: translateY(-100%);
+  }
 }
 
 /*Director*/
@@ -351,6 +405,31 @@ h2 {
 h3, h4 {
   margin: 0.5rem 0;
 }
+/* Mobile View Styles */
+@media (max-width: 768px) {
+  .teacher-list, .event-list {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .teacher-card, .event-card {
+      width: 90%; /* Adjust as needed */
+      max-width: 400px; /* Optional: for larger screens within mobile view */
+      margin-bottom: 20px;
+  }
+
+  .card-cover img {
+      width: 100%;
+      height: auto;
+  }
+
+  .card-inner, .card-cover {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+  }
+}
 
 /* Events Section */
 .events {
@@ -421,6 +500,19 @@ h2 {
   line-height: 1.5;
   color: #444;
 }
+@media (max-width: 768px) {
+  .event-list {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+  }
+
+  .event-card {
+      width: 90%; /* Responsive width for mobile devices */
+      max-width: 500px; /* Max width for larger mobile screens */
+  }
+}
+
 /*TimeLine*/
 .events2-section {
   padding: 100px 20px;
@@ -613,6 +705,11 @@ h2 {
   width: 100%;
   max-height: 300px;
   border-radius: 10px;
+}
+@media (max-width: 768px) {
+  .gallery-grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
 }
 
 /* Footer */
